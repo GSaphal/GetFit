@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstLoginActivity">
+
+    <include layout="@layout/nav_header"></include>
+
+    <TextView
+        android:padding="15dp"
+        android:textSize="18dp"
+        android:layout_width="wrap_content"
+        android:textColor="@color/colorBlue"
+        android:text="Input"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:text="Gender"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+
+        android:id="@+id/RadioGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radbtn1"
+            android:layout_width="wrap_content"
+            android:text="Male"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/radbtn2"
+            android:layout_width="wrap_content"
+            android:text="Female"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:text="Birthdate"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/datepick"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Height"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:hint="height(m)"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Weight"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:hint="weight(kg)"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnimage"
+        android:layout_width="wrap_content"
+        android:text="Select profile image"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+
+
+
+</LinearLayout>
