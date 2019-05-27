@@ -5,20 +5,66 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/calories"
-            android:icon="@drawable/ic_calorie"
-            android:title="Calories" />
-        <item
-            android:id="@+id/steps"
-            android:icon="@drawable/ic_steps"
-            android:title="Steps" />
-        <item
-            android:id="@+id/blogs"
-            android:icon="@drawable/ic_blogs"
-            android:title="Fitness Blogs" />
-        <item
-            android:id="@+id/exercises"
-            android:icon="@drawable/ic_dumbell"
-            android:title="Exercises" />
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_user"
+            android:title="My Profile" />
+        <item android:title="Activities">
+            <menu>
+
+                <item
+                    android:id="@+id/calories"
+                    android:icon="@drawable/ic_calorie"
+                    android:title="My Calories" />
+                <item
+                    android:id="@+id/steps"
+                    android:icon="@drawable/ic_steps"
+                    android:title="Steps" />
+                <item
+                    android:id="@+id/goals"
+                    android:icon="@drawable/ic_goals"
+                    android:title="Goals" />
+                <item
+                    android:id="@+id/nutrition"
+                    android:icon="@drawable/ic_nutrition"
+                    android:title="Nutrition" />
+                <item
+                    android:id="@+id/remainders"
+                    android:icon="@drawable/ic_remainders"
+                    android:title="Remainder" />
+
+
+                <item
+                    android:id="@+id/blogs"
+                    android:icon="@drawable/ic_blogs"
+                    android:title="Blogs" />
+                <item
+                    android:id="@+id/exercises"
+                    android:icon="@drawable/ic_dumbell"
+                    android:title="Exercises" />
+            </menu>
+        </item>
+
     </group>
+    <item android:title="Manage Profile">
+        <menu>
+            <item
+                android:id="@+id/edit_profile"
+                android:icon="@drawable/ic_edit"
+                android:title="Edit Profile" />
+        </menu>
+    </item>
+    <item android:title="Settings">
+        <menu>
+            <item
+                android:id="@+id/privacy"
+                android:icon="@drawable/ic_privacy"
+                android:title="Privacy" />
+            <item
+                android:id="@+id/help"
+                android:icon="@drawable/ic_help"
+                android:title="Help" />
+        </menu>
+    </item>
+
+
 </menu>
