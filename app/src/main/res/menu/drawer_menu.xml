@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/calories"
+            android:icon="@drawable/ic_calorie"
+            android:title="Calories" />
+        <item
+            android:id="@+id/steps"
+            android:icon="@drawable/ic_steps"
+            android:title="Steps" />
+        <item
+            android:id="@+id/blogs"
+            android:icon="@drawable/ic_blogs"
+            android:title="Fitness Blogs" />
+        <item
+            android:id="@+id/exercises"
+            android:icon="@drawable/ic_dumbell"
+            android:title="Exercises" />
+    </group>
+</menu>
