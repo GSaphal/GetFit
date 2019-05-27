@@ -11,9 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".FirstLoginActivity">
-
-        </activity>
         <activity android:name=".features.CalorieActivity" />
         <activity android:name=".menu.MenuActivity">
             <intent-filter>
