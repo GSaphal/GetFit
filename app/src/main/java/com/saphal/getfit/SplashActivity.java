@@ -15,14 +15,12 @@ public class SplashActivity extends AppCompatActivity {
 
 
     private void loadScreen() {
-
-//        ctrl+space
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 //move from one activity to another
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
             }
-        },2000);
+        },500);
     }
 }

@@ -3,6 +3,8 @@
     <string name="title_activity_menu">MenuActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_logout_open">Open logout drawer</string>
+    <string name="navigation_drawer_logout_close">Close logout drawer</string>
     <string name="appquote">A Complete Fitness Solution</string>
 
 </resources>
