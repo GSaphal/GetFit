@@ -57,8 +57,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
+            android:inputType="textPassword"
+            android:maxLines="1"
             android:textColor="@color/colorWhite"
-            android:textColorHint="@color/colorWhite" />
+            android:textColorHint="@color/colorWhite"
+            android:textStyle="normal" />
     </android.support.design.widget.TextInputLayout>
 
 

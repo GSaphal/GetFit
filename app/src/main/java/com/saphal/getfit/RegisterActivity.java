@@ -35,16 +35,16 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        tv_email = (TextInputEditText) findViewById(R.id.tv_email);
-        tv_password = (TextInputEditText) findViewById(R.id.tv_password);
-        tv_conpassword = (TextInputEditText) findViewById(R.id.tv_conpassword);
-        btn_register = (Button) findViewById(R.id.btn_register);
+        tv_email =findViewById(R.id.tv_email);
+        tv_password = findViewById(R.id.tv_password);
+        tv_conpassword = findViewById(R.id.tv_conpassword);
+        btn_register =  findViewById(R.id.btn_register);
         mFirebaseHelper = new FirebaseHelper(getApplicationContext());
     }
 
 
     public void onBtnClickRegister(View view) {
-        String email, username, password, conpassword;
+        String email,password, conpassword;
         email = tv_email.getText().toString();
 
         password = tv_password.getText().toString();
@@ -86,17 +86,12 @@ public class RegisterActivity extends AppCompatActivity {
                             FirebaseUser user = mFirebaseHelper.getmAuth().getCurrentUser();
                             updateUI(user);
                         } else {
-                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                                Toast.makeText(RegisterActivity.this, "Email is already registered.", Toast.LENGTH_SHORT).show();
-                            } else {
                                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(RegisterActivity.this,task.getException().getMessage(),
+                                Toast.makeText(RegisterActivity.this,"Sorry Some Error Occoured",
                                         Toast.LENGTH_SHORT).show();
                                 updateUI(null);
                             }
                         }
-                        // ...
-                    }
                 });
 
     }
