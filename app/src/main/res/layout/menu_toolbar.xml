@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
+        app:title="GetFit"
+        app:titleMarginStart="10dp"
+        app:titleTextColor="@color/colorWhite"
+        app:titleTextAppearance="@style/ToolbarSize"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorBlue"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="@string/app_name"
-        app:titleTextAppearance="@style/titlestyle"
-        app:titleTextColor="@color/colorWhite"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:ignore="MissingConstraints">
     </android.support.v7.widget.Toolbar>
 
 

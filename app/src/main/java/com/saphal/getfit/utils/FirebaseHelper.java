@@ -16,8 +16,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.saphal.getfit.MainActivity;
 import com.saphal.getfit.RegisterActivity;
-import com.saphal.getfit.models.Register;
-
 import static com.firebase.ui.auth.AuthUI.TAG;
 import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 

@@ -1,6 +1,7 @@
 package com.saphal.getfit;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,15 +22,18 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
-import com.saphal.getfit.models.Register;
 import com.saphal.getfit.utils.FirebaseHelper;
 
 public class RegisterActivity extends AppCompatActivity {
+
 
     private TextInputEditText tv_email, tv_password, tv_conpassword;
     private Button btn_register;
     private FirebaseHelper mFirebaseHelper;
     private static final String TAG = "RegisterActivity";
+    private boolean isValid=true;
+    private TextView app_name;
+    private TextView app_desc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,11 @@ public class RegisterActivity extends AppCompatActivity {
         tv_password = findViewById(R.id.tv_password);
         tv_conpassword = findViewById(R.id.tv_conpassword);
         btn_register =  findViewById(R.id.btn_register);
+        app_name=findViewById(R.id.app_name);
+        app_desc=findViewById(R.id.app_desc);
+        Typeface shadow = Typeface.createFromAsset(getAssets(), "fonts/Shadow.ttf");
+        app_name.setTypeface(shadow);
+        app_desc.setTypeface(shadow);
         mFirebaseHelper = new FirebaseHelper(getApplicationContext());
     }
 
@@ -51,11 +61,15 @@ public class RegisterActivity extends AppCompatActivity {
 
         conpassword = tv_conpassword.getText().toString();
         validData(email, password, conpassword);
-        signUpUser(email, password);
+        if(isValid=true) {
+            signUpUser(email, password);
+        }
     }
 
     private boolean validData(String email, String password, String conpassword) {
-        boolean isValid = true;
+//        if (HelperUtils.isValidEmail(email)){
+//
+//        }
         if (email.isEmpty()) {
             Toast.makeText(this, "Email cannot be Empty", Toast.LENGTH_SHORT).show();
             isValid = false;
@@ -87,7 +101,7 @@ public class RegisterActivity extends AppCompatActivity {
                             updateUI(user);
                         } else {
                                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(RegisterActivity.this,"Sorry Some Error Occoured",
+                                Toast.makeText(RegisterActivity.this,task.getException().getMessage(),
                                         Toast.LENGTH_SHORT).show();
                                 updateUI(null);
                             }

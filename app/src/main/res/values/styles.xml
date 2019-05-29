@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -6,13 +6,22 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:typeface">serif</item>
         <item name="colorControlNormal">@color/orange</item>
-        <item name="hintTextAppearance">@color/colorWhite</item>
-        <item name="colorControlActivated">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+
+        <item name="android:typeface">serif</item>
+        <item name="colorControlActivated">@color/orange</item>
 
     </style>
-
+    <style name="TextAppearance.App.TextInputLayout" parent="@android:style/TextAppearance">
+    <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <style name="Shadow">
+        <item name="android:fontFamily">@font/shadow</item>
+    </style>
+    <style name="ToolbarSize" parent="@style/Base.TextAppearance.AppCompat.Title">
+        <item name="android:textSize">32sp</item>
+    </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -21,8 +30,17 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="titlestyle" parent="@style/Base.TextAppearance.AppCompat.Title">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">30sp</item>
     </style>
 
+    <style name="mytheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">@color/black</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/orange</item>
+        <item name="android:typeface">serif</item>
+        <item name="colorControlActivated">@color/orange</item>
+    </style>
 
 </resources>

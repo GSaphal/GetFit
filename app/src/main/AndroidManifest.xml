@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.saphal.getfit">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".models.CustomFontApp"
         android:allowBackup="true"
@@ -11,17 +13,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".features.LandingActivity"></activity>
-        <activity android:name=".SplashActivity" />
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".firstlogin.FirstLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".features.GoalsActivity" />
+        <activity android:name=".features.LogOutActivity" />
+        <activity android:name=".features.LandingActivity" />
+        <activity android:name=".SplashActivity" />
+        <activity android:name=".MainActivity">
+
         </activity>
         <activity android:name=".features.CalorieActivity" />
-        <activity android:name=".menu.MenuActivity">
+        <activity android:name=".menu.MenuActivity" >
 
         </activity>
         <activity android:name=".RegisterActivity" />

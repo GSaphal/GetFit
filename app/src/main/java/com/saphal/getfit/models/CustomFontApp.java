@@ -9,7 +9,7 @@ public class CustomFontApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/Montserrat-Black.ttf");
+        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/OpenSans-Regular.ttf");
 
     }
 }
