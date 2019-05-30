@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 import com.saphal.getfit.R;
 
-public class Calorie extends Fragment {
+public class LandingFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_calorie,container,false);
+        return inflater.inflate(R.layout.activity_landing,container,false);
     }
 }

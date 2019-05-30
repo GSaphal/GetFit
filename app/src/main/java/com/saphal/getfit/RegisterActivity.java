@@ -71,19 +71,18 @@ public class RegisterActivity extends AppCompatActivity {
 //
 //        }
         if (email.isEmpty()) {
-            Toast.makeText(this, "Email cannot be Empty", Toast.LENGTH_SHORT).show();
+            tv_email.setError("Username Cannot be Empty");
             isValid = false;
         } else if (password.isEmpty()) {
-            Toast.makeText(this, "Password cannot be empty", Toast.LENGTH_SHORT).show();
+            tv_password.setError("Password Cannot be Empty");
             isValid = false;
         } else if (password.length() < 5) {
-            Toast.makeText(this, "Password must be more than 5 characters", Toast.LENGTH_SHORT).show();
+            tv_password.setError("Password must be more than 5 characters");
             isValid = false;
         } else if (!password.equals(conpassword)) {
-            Toast.makeText(this, "Password and Confirmation password are different.", Toast.LENGTH_SHORT).show();
-            isValid = false;
+        tv_conpassword.setError("Confirmation Password doesn't match");
+        isValid = false;
         }
-
         return isValid;
     }
 

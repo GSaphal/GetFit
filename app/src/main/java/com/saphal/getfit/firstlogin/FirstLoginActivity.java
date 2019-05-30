@@ -36,6 +36,7 @@ import com.saphal.getfit.menu.MenuActivity;
 import com.saphal.getfit.models.Upload;
 import com.saphal.getfit.models.UserFire;
 import com.saphal.getfit.utils.FirebaseHelper;
+import com.saphal.getfit.utils.SharedPreferenceHelper;
 import com.squareup.picasso.Picasso;
 
 public class FirstLoginActivity extends AppCompatActivity {
@@ -46,21 +47,25 @@ public class FirstLoginActivity extends AppCompatActivity {
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
     private StorageTask mUploadTask;
+    private SharedPreferenceHelper sharedPreferenceHelper;
 
     private TextView login_header, login_desc;
     private TextInputEditText tv_name, tv_age, tv_weight, tv_height, tv_goal_weight;
     private RadioGroup tv_gender, tv_active;
-    private String value=null, keyId;
+    private String value = null, keyId;
     private Spinner spinner1;
     private FirebaseHelper mFirebaseHelper;
     private String spinnertext;
-    private String active=null;
+    private String active = null;
     private ImageButton btn_select;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_first_login);
+
+
         setContentView(R.layout.activity_first_login);
         login_header = findViewById(R.id.login_header);
         login_desc = findViewById(R.id.login_desc);
@@ -70,8 +75,8 @@ public class FirstLoginActivity extends AppCompatActivity {
         tv_name = findViewById(R.id.tv_name);
         tv_age = findViewById(R.id.tv_age);
         tv_gender = findViewById(R.id.tv_gender);
-        spinner1=findViewById(R.id.spinner1);
-        btn_select=findViewById(R.id.btn_select);
+        spinner1 = findViewById(R.id.spinner1);
+        btn_select = findViewById(R.id.btn_select);
         tv_gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -123,16 +128,15 @@ public class FirstLoginActivity extends AppCompatActivity {
     }
 
     public void onBtnClickNext(View view) {
-        String name, age, gender,weight,height,goal_weight;
+        String name, age, gender, weight, height, goal_weight;
         name = tv_name.getText().toString();
         age = tv_age.getText().toString();
         value = value.toString();
-        weight=tv_weight.getText().toString();
-        height=tv_height.getText().toString();
-        goal_weight=tv_goal_weight.getText().toString();
-        active=active.toString();
-        spinnertext=spinner1.getSelectedItem().toString();
-
+        weight = tv_weight.getText().toString();
+        height = tv_height.getText().toString();
+        goal_weight = tv_goal_weight.getText().toString();
+        active = active.toString();
+        spinnertext = spinner1.getSelectedItem().toString();
 
 
         keyId = mFirebaseHelper.getmRef().child("user").push().getKey();
@@ -154,17 +158,17 @@ public class FirstLoginActivity extends AppCompatActivity {
 
 
     private void addToDatabase(UserFire user) {
-        mFirebaseHelper.getmRef().child(keyId)
-                .child("user")
+        mFirebaseHelper.getmRef().child("users")
+                .child(keyId)
                 .setValue(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                startActivity(new Intent(getApplicationContext(), MenuActivity.class));
-                Toast.makeText(FirstLoginActivity.this, "Your Profile is Successfully Saved.", Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+                        Toast.makeText(FirstLoginActivity.this, "Your Profile is Successfully Saved.", Toast.LENGTH_SHORT).show();
 
-            }
-        })
+                    }
+                })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
@@ -189,7 +193,7 @@ public class FirstLoginActivity extends AppCompatActivity {
             StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()
                     + "." + getFileExtension(imageuri));
 
-            mUploadTask=fileReference.putFile(imageuri)
+            mUploadTask = fileReference.putFile(imageuri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -216,8 +220,8 @@ public class FirstLoginActivity extends AppCompatActivity {
             Toast.makeText(this, "No file selected", Toast.LENGTH_SHORT).show();
         }
     }
-    private String getFileExtension(Uri uri)
-    {
+
+    private String getFileExtension(Uri uri) {
         ContentResolver cR = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cR.getType(uri));
@@ -233,8 +237,8 @@ public class FirstLoginActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data!=null && data.getData()!=null) {
-            imageuri=data.getData();
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            imageuri = data.getData();
             Picasso.with(this).load(imageuri).into(profile_img);
 
         }

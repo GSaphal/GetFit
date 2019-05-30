@@ -20,10 +20,12 @@ import static com.firebase.ui.auth.AuthUI.TAG;
 import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
 public class FirebaseHelper {
+    public   String userID;
     private Context context;
     private FirebaseAuth mAuth;
     private FirebaseDatabase database;
     private DatabaseReference mRef;
+
 
     public FirebaseHelper(Context context) {
         this.context = context;

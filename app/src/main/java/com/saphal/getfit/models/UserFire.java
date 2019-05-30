@@ -1,6 +1,11 @@
 package com.saphal.getfit.models;
 
-public class UserFire {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.saphal.getfit.utils.FirebaseHelper;
+
+public class UserFire implements Parcelable {
     public String tv_name;
     public String tv_age;
     public String value;
@@ -78,7 +83,7 @@ public class UserFire {
     public UserFire() {
     }
 
-    public UserFire(String keyId,String tv_name, String tv_age, String value, String tv_weight, String tv_height, String tv_goal_weight, String active, String spinner_text) {
+    public UserFire(String keyId, String tv_name, String tv_age, String value, String tv_weight, String tv_height, String tv_goal_weight, String active, String spinner_text) {
         this.tv_name = tv_name;
         this.tv_age = tv_age;
         this.value = value;
@@ -89,4 +94,13 @@ public class UserFire {
         this.spinner_text = spinner_text;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+    }
 }
