@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="25dp"
         android:text="A Complete Fitness Solution"
         android:textColor="@color/orange"
         android:textSize="20sp" />
