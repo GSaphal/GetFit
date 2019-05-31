@@ -9,4 +9,5 @@
     <color name="appcolor">#1e48b6</color>
     <color name="orange">#FFA500</color>
     <color name="fadedgray">#EAE8E4</color>
+    <color name="background">#F5F5F5</color>
 </resources>

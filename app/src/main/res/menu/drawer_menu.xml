@@ -65,7 +65,7 @@
                 android:title="Help" />
             <item
                 android:id="@+id/logout"
-                android:icon="@drawable/ic_logout"
+                android:icon="@drawable/ic_logout_1"
                 android:title="Logout" />
         </menu>
     </item>

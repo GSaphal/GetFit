@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F5F5F5"
+        android:background="@color/background"
         android:orientation="vertical">
 
         <include layout="@layout/first_login_header"></include>
@@ -88,21 +88,6 @@
             android:layout_marginBottom="10dp"
             android:visibility="gone"
             />
-
-        <Button
-            android:id="@+id/upload"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:background="@color/browser_actions_divider_color"
-            android:text="Upload"
-            android:visibility="gone"
-            android:onClick="onBtnUpload"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textStyle="bold
-" />
 
         <RadioGroup
             android:id="@+id/tv_gender"
@@ -280,7 +265,8 @@
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
 
     </LinearLayout>

@@ -16,9 +16,34 @@ public class UserFire implements Parcelable {
     public String spinner_text;
 
 
-    public String getTv_name() {
-        return tv_name;
+    public UserFire() {
     }
+
+
+    protected UserFire(Parcel in) {
+        tv_name = in.readString();
+        tv_age = in.readString();
+        value = in.readString();
+        tv_weight = in.readString();
+        tv_height = in.readString();
+        tv_goal_weight = in.readString();
+        active = in.readString();
+        spinner_text = in.readString();
+    }
+
+    public static final Creator<UserFire> CREATOR = new Creator<UserFire>() {
+        @Override
+        public UserFire createFromParcel(Parcel in) {
+            return new UserFire(in);
+        }
+
+        @Override
+        public UserFire[] newArray(int size) {
+            return new UserFire[size];
+        }
+    };
+
+    public String getTv_name() { return tv_name; }
 
     public void setTv_name(String tv_name) {
         this.tv_name = tv_name;
@@ -80,10 +105,8 @@ public class UserFire implements Parcelable {
         this.spinner_text = spinner_text;
     }
 
-    public UserFire() {
-    }
 
-    public UserFire(String keyId, String tv_name, String tv_age, String value, String tv_weight, String tv_height, String tv_goal_weight, String active, String spinner_text) {
+    public UserFire(String tv_name, String tv_age, String value, String tv_weight, String tv_height, String tv_goal_weight, String active, String spinner_text) {
         this.tv_name = tv_name;
         this.tv_age = tv_age;
         this.value = value;
@@ -95,12 +118,33 @@ public class UserFire implements Parcelable {
     }
 
     @Override
+    public String toString() {
+        return "UserFire{" +
+                "tv_name='" + tv_name + '\'' +
+                ", tv_age='" + tv_age + '\'' +
+                ", value='" + value + '\'' +
+                ", tv_weight='" + tv_weight + '\'' +
+                ", tv_height='" + tv_height + '\'' +
+                ", tv_goal_weight='" + tv_goal_weight + '\'' +
+                ", active='" + active + '\'' +
+                ", spinner_text='" + spinner_text + '\'' +
+                '}';
+    }
+
+    @Override
     public int describeContents() {
         return 0;
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-
+        dest.writeString(tv_name);
+        dest.writeString(tv_age);
+        dest.writeString(value);
+        dest.writeString(tv_weight);
+        dest.writeString(tv_height);
+        dest.writeString(tv_goal_weight);
+        dest.writeString(active);
+        dest.writeString(spinner_text);
     }
 }

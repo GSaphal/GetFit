@@ -42,7 +42,6 @@ import com.squareup.picasso.Picasso;
 public class FirstLoginActivity extends AppCompatActivity {
     private ImageView profile_img;
     public static final int PICK_IMAGE_REQUEST = 1;
-    private Button upload;
     private Uri imageuri;
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
@@ -52,12 +51,13 @@ public class FirstLoginActivity extends AppCompatActivity {
     private TextView login_header, login_desc;
     private TextInputEditText tv_name, tv_age, tv_weight, tv_height, tv_goal_weight;
     private RadioGroup tv_gender, tv_active;
-    private String value = null, keyId;
+    private String value = null;
     private Spinner spinner1;
     private FirebaseHelper mFirebaseHelper;
     private String spinnertext;
     private String active = null;
     private ImageButton btn_select;
+    private String userID;
 
 
     @Override
@@ -120,15 +120,14 @@ public class FirstLoginActivity extends AppCompatActivity {
 
 
         profile_img = findViewById(R.id.profile_img);
-        upload = findViewById(R.id.upload);
         mFirebaseHelper = new FirebaseHelper(getApplicationContext());
-        mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
+        mStorageRef = FirebaseStorage.getInstance().getReference("users");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("users");
 
     }
 
     public void onBtnClickNext(View view) {
-        String name, age, gender, weight, height, goal_weight;
+        String name, age, gender, weight, height, goal_weight,profile_img;
         name = tv_name.getText().toString();
         age = tv_age.getText().toString();
         value = value.toString();
@@ -139,9 +138,11 @@ public class FirstLoginActivity extends AppCompatActivity {
         spinnertext = spinner1.getSelectedItem().toString();
 
 
-        keyId = mFirebaseHelper.getmRef().child("user").push().getKey();
+
+        if (mFirebaseHelper.getmAuth().getCurrentUser() != null) {
+            userID = mFirebaseHelper.getmAuth().getCurrentUser().getUid();
+        };
         UserFire user = new UserFire(
-                keyId,
                 name,
                 age,
                 value,
@@ -152,14 +153,21 @@ public class FirstLoginActivity extends AppCompatActivity {
                 spinnertext
 
         );
-
         addToDatabase(user);
+        if (mUploadTask != null && mUploadTask.isInProgress()) {
+            Toast.makeText(this, "Upload in Progress", Toast.LENGTH_SHORT).show();
+
+        } else {
+
+            uploadFile();
+        }
+
     }
 
 
     private void addToDatabase(UserFire user) {
         mFirebaseHelper.getmRef().child("users")
-                .child(keyId)
+                .child(userID)
                 .setValue(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -175,17 +183,10 @@ public class FirstLoginActivity extends AppCompatActivity {
                         Toast.makeText(FirstLoginActivity.this, "Error", Toast.LENGTH_SHORT).show();
                     }
                 });
-        mFirebaseHelper.getmRef().child("user").child(keyId).removeValue();
+        mFirebaseHelper.getmRef().child("user").child(userID).removeValue();
     }
 
-    public void onBtnUpload(View view) {
-        if (mUploadTask != null && mUploadTask.isInProgress()) {
-            Toast.makeText(this, "Upload in Progress", Toast.LENGTH_SHORT).show();
 
-        } else {
-            uploadFile();
-        }
-    }
 
 
     private void uploadFile() {
@@ -198,10 +199,11 @@ public class FirstLoginActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                            Toast.makeText(FirstLoginActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
                             Upload upload = new Upload(taskSnapshot.getStorage().getDownloadUrl().toString());
                             String uploadId = mDatabaseRef.push().getKey();
                             mDatabaseRef.child(uploadId).setValue(upload);
+                            Toast.makeText(FirstLoginActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
+
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -248,7 +250,6 @@ public class FirstLoginActivity extends AppCompatActivity {
         openFileChooser();
         btn_select.setVisibility(View.GONE);
         profile_img.setVisibility(View.VISIBLE);
-        upload.setVisibility(View.VISIBLE);
 
     }
 }
