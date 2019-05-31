@@ -13,6 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".features.ExerciseActivity">
+        </activity>
         <activity android:name=".features.AddReminderActivity">
         </activity>
         <activity android:name=".features.ReminderActivity">
@@ -23,7 +25,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".firstlogin.FirstLoginActivity">
-
         </activity>
         <activity android:name=".features.GoalsActivity" />
         <activity android:name=".features.LogOutActivity" />
