@@ -1,16 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
-    tools:context=".features.GoalsActivity">
+    android:orientation="vertical">
+    <include
+        layout="@layout/layout_goal"/>
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/text"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GoalFragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:text="Enter your information below"
+        android:textSize="23sp"
+        android:textStyle="bold"/>
 
-</RelativeLayout>
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/cal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/calorie_intake"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/colorAccent"
+        android:textColorHint="@color/black"
+        android:paddingTop="20dp"
+        android:layout_marginBottom="20dp"
+        />
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/step"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/tentative_steps_walked"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/colorAccent"
+        android:textColorHint="@color/black"
+        android:paddingTop="20dp"
+        android:layout_marginBottom="20dp"
+        />
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/goal_cal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/goal_calorie"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/colorAccent"
+        android:textColorHint="@color/black"
+        android:paddingTop="20dp"
+        android:layout_marginBottom="20dp"
+        />
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/goal_steps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="@string/goal_steps"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/colorAccent"
+        android:textColorHint="@color/black"
+        android:paddingTop="20dp"
+        android:layout_marginBottom="20dp"
+        />
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Time needed"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/colorAccent"
+        android:textColorHint="@color/black"
+        android:paddingTop="20dp"
+        android:layout_marginBottom="20dp"
+        />
+    <Button
+        android:id="@+id/btn_finish"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorBlue"
+        android:onClick="onBtnClickNext"
+        android:text="@string/finish"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        />
+
+</LinearLayout>
