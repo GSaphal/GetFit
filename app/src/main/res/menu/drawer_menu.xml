@@ -30,7 +30,7 @@
                 <item
                     android:id="@+id/remainders"
                     android:icon="@drawable/ic_remainders"
-                    android:title="Remainder" />
+                    android:title="Reminder" />
 
 
                 <item

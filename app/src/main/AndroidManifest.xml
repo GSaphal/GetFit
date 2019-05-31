@@ -13,13 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <activity android:name=".firstlogin.FirstLoginActivity">
+        <activity android:name=".features.AddReminderActivity">
+        </activity>
+        <activity android:name=".features.ReminderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".firstlogin.FirstLoginActivity">
 
         </activity>
         <activity android:name=".features.GoalsActivity" />
@@ -27,14 +30,10 @@
         <activity android:name=".features.LandingActivity" />
         <activity android:name=".SplashActivity" />
         <activity android:name=".MainActivity">
-
-
         </activity>
-            <activity android:name=".features.CalorieActivity" />
-        <activity android:name=".menu.MenuActivity" >
-
+        <activity android:name=".features.CalorieActivity" />
+        <activity android:name=".menu.MenuActivity">
         </activity>
-
         <activity android:name=".RegisterActivity" />
     </application>
 
