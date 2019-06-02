@@ -5,16 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 android:background="@color/colorWhite"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="5">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="280dp">
+        android:layout_height="0dp"
+        android:layout_weight="2">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="@color/colorAccent"
+            android:layout_height="match_parent"
+            android:background="@color/appcolor"
             android:orientation="vertical">
 
             <ImageView
@@ -22,32 +24,34 @@ android:background="@color/colorWhite"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="45dp" />
+                android:layout_marginTop="30dp" />
 
             <TextView
                 android:id="@+id/display_name"
-                android:layout_width="155dp"
-                android:layout_height="46dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
                 android:text="Wiliam Snoe"
-                android:textColor="@color/orange"
+                android:textColor="@color/colorWhite"
                 android:textSize="24sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <android.support.v7.widget.CardView
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="210dp"
-            android:background="@color/fadedgray">
+    </RelativeLayout>
 
-            <LinearLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:weightSum="3">
+                android:weightSum="4">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -126,9 +130,33 @@ android:background="@color/colorWhite"
                         android:textStyle="bold" />
 
                 </LinearLayout>
-            </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/display_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:text="female"
+                    android:textColor="@color/orange"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+            </LinearLayout>
     </RelativeLayout>
 
     <LinearLayout
@@ -138,31 +166,7 @@ android:background="@color/colorWhite"
         android:layout_marginTop="45dp"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="25dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Gender"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:textColor="@color/colorBlue"/>
-
-            <TextView
-                android:id="@+id/display_gender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:textSize="15sp"
-                android:textColor="@color/orange"
-                />
-
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
