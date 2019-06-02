@@ -4,15 +4,16 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.saphal.getfit.R;
 
 public class GoalsActivity extends AppCompatActivity {
 
-    private TextView text;
-    private TextInputEditText cal,step,goal_cal,goal_steps,time;
-    private Button btn_finish;
+
+    private EditText cal,step,goal_cal,goal_steps,time;
+    private Button onBtnGoalSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
