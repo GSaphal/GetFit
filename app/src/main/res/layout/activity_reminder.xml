@@ -22,7 +22,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center"
             android:layout_margin="@dimen/fab_margin"
-            app:srcCompat="@drawable/addsign1"
             app:backgroundTint="@color/appcolor"
             app:fabSize="normal"/>
     </android.support.design.widget.CoordinatorLayout>

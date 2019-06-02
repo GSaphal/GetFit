@@ -8,18 +8,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.util.LogTime;
-import com.firebase.ui.auth.data.model.User;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,8 +25,6 @@ import com.saphal.getfit.models.LandingFragment;
 import com.saphal.getfit.models.ProfileFragment;
 import com.saphal.getfit.models.UserFire;
 import com.saphal.getfit.utils.FirebaseHelper;
-
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -137,7 +128,9 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
                      case R.id.profile:
                       getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new ProfileFragment()).commit();
                    break;
-
+//                case R.id.steps:
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new StepFragment()).commit();
+//                    break;
 //            case R.id.goals:
 //                Toast.makeText(this, "Selected Goal Fragment", Toast.LENGTH_SHORT).show();
 //                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Goals()).commit();

@@ -66,7 +66,7 @@ dependencies {
 
     //image animation
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
-
+    //implementation 'com.muddzdev:styleabletoast:2.2.2'
 
 }
 apply plugin: 'com.google.gms.google-services'
