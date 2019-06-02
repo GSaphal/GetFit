@@ -2,7 +2,6 @@ package com.saphal.getfit.models;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,20 +12,20 @@ import android.widget.Button;
 import com.saphal.getfit.R;
 import com.saphal.getfit.features.GoalActivity;
 
-public class Goals extends Fragment {
-    private View view;
-    private Button add_dataa;
+public class GoalFragment extends Fragment {
+    private Button btn_goal_add;
+
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-      view=inflater.inflate(R.layout.activity_goals,container,false);
-        add_dataa.setOnClickListener(new View.OnClickListener() {
-
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_goal_display, container, false);
+        btn_goal_add=view.findViewById(R.id.btn_calorie_add);
+        btn_goal_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), GoalActivity.class));
+                startActivity(new Intent(getActivity(), GoalActivity.class));
             }
         });
         return view;
     }
-    }
+}

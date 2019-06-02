@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Goal Fragment"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true" android:background="@color/colorBlue" android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_goal_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/my_shape_rounded"
+            app:srcCompat="@drawable/ic_add_black_24dp" />
+    </LinearLayout>
+</RelativeLayout>
