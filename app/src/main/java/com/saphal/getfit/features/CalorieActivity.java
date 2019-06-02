@@ -106,7 +106,7 @@ public class CalorieActivity extends AppCompatActivity {
     private Uri getImageUri(Context applicationContext, Bitmap photo) {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         photo.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(CalorieActivity.this.getContentResolver(), photo, "Title", null);
+        String path = MediaStore.Images.Media.insertImage(CalorieActivity.this.getContentResolver(), photo, "calorie", null);
         return Uri.parse(path);
 
     }
