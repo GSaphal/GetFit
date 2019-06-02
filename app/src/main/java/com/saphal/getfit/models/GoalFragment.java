@@ -10,8 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.saphal.getfit.R;
-import com.saphal.getfit.features.CalorieActivity;
-import com.saphal.getfit.features.GoalsActivity;
+import com.saphal.getfit.features.GoalActivity;
 
 public class GoalFragment extends Fragment {
     private Button btn_goal_add;
@@ -24,7 +23,7 @@ public class GoalFragment extends Fragment {
         btn_goal_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), GoalsActivity.class));
+                startActivity(new Intent(getActivity(), GoalActivity.class));
             }
         });
         return view;

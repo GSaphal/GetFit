@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.saphal.getfit.R;
-import com.saphal.getfit.features.GoalsActivity;
+import com.saphal.getfit.features.GoalActivity;
 
 public class Goals extends Fragment {
     private View view;
@@ -24,7 +24,7 @@ public class Goals extends Fragment {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), GoalsActivity.class));
+                startActivity(new Intent(v.getContext(), GoalActivity.class));
             }
         });
         return view;

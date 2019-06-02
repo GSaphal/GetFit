@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".firstlogin.FirstLoginActivity" />
-        <activity android:name=".features.GoalsActivity" />
+        <activity android:name=".features.GoalActivity" />
         <activity android:name=".features.LogOutActivity" />
         <activity android:name=".features.LandingActivity" />
         <activity android:name=".SplashActivity" />
